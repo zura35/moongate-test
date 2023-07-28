@@ -1,1 +1,5 @@
 .DS_Store
+
+backend/task1/coverage/*
+backend/task1/dist/*
+backend/task1/node_modules/*
