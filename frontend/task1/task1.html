@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Webpage</title>
+
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        height: 100%;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (min-width: 1280px) {
+      }
+    </style>
+
+    <script type="text/javascript">
+      const onMenuClick = () => {
+        const nav = document.getElementById("nav");
+        if (nav) nav.classList.toggle("hidden");
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div>
+        <div id="logo">My Logo</div>
+
+        <button onclick="onMenuClick()">
+          <i class="material-icons">menu</i>
+        </button>
+      </div>
+    </header>
+
+    <div>
+      <!-- Sidebar -->
+      <nav id="nav" class="bg-yellow-500">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <!-- Main Contents-->
+      <main class="bg-green-500">
+        <!-- Hero section -->
+        <section id="home">
+          <h1>Home</h1>
+          <button>Learn More</button>
+        </section>
+
+        <!-- Section -->
+        <section>
+          <div id="why">
+            <h2>Why</h2>
+            <div>
+              <img src="https://picsum.photos/1500" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sed fermentum quam, ut efficitur nisl.
+            </p>
+          </div>
+          <div id="what">
+            <h2>What</h2>
+            <div>
+              <img src="https://picsum.photos/1000" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sed fermentum quam, ut efficitur nisl.
+            </p>
+          </div>
+          <div id="how">
+            <h2>How</h2>
+            <div>
+              <img src="https://picsum.photos/1800" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sed fermentum quam, ut efficitur nisl.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-red-500">
+      <div>
+        <nav>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </nav>
+        <div>&copy; 2023 My Company</div>
+      </div>
+    </footer>
+  </body>
+</html>
