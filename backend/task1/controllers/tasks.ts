@@ -1,6 +1,3 @@
-import { randomUUID } from "crypto";
-import TaskService from "../services/tasks";
-
 interface Task {
     id: string;
     title: string;
@@ -10,6 +7,14 @@ interface Task {
 interface ListTasksResponse {
     tasks: Task[];
     nextCursor: string;
+}
+
+abstract class TaskService {
+    abstract listTasks(cursor: string, limit: number): ListTasksResponse;
+    abstract getTask(id: string): Task | Error;
+    abstract createTask(title: string, description: string): Task;
+    abstract updateTask(id: string, title: string, description: string): Task | Error;
+    abstract deleteTask(id: string): void | Error;
 }
 
 export default class TasksController {
@@ -54,6 +59,6 @@ export default class TasksController {
         if (res === undefined) {
             return;
         }
-        throw new Error(res.message);
+        throw new Error((res as Error).message);
     }
 }
