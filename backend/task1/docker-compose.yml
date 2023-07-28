@@ -1,7 +1,0 @@
-services:
-  openapi-generator:
-    image: openapitools/openapi-generator-cli:latest
-    volumes:
-      - .:/openapi
-      - ./server:/generated/openapi
-    command: generate -i /openapi/openapi.yml -g nodejs-express-server -o /generated/openapi -p serverPort=8000
