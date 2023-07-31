@@ -20,12 +20,36 @@
         font-size: 12px;
         height: 100%;
         min-height: 100vh;
+        overflow-y: auto;
         position: relative;
         display: flex;
         flex-direction: column;
       }
 
+      nav a {
+        padding: 0.5rem;
+      }
+
+      #why,
+      #what,
+      #how {
+        margin: 1rem;
+      }
+
       @media (min-width: 1280px) {
+        body {
+          max-height: 100vh;
+        }
+
+        .main-content {
+          height: 100%;
+          overflow-y: auto;
+        }
+
+        main {
+          height: 100%;
+          overflow-y: auto;
+        }
       }
     </style>
 
@@ -40,33 +64,35 @@
     <!-- Header -->
     <header>
       <div>
-        <div id="logo">My Logo</div>
+        <span class="xl:hidden">
+          <button onclick="onMenuClick()">
+            <i class="material-icons">menu</i>
+          </button>
+        </span>
 
-        <button onclick="onMenuClick()">
-          <i class="material-icons">menu</i>
-        </button>
+        <span id="logo">My Logo</span>
       </div>
     </header>
 
-    <div>
+    <div class="main-content xl:flex xl:flex-row">
       <!-- Sidebar -->
-      <nav id="nav" class="bg-yellow-500">
+      <nav id="nav" class="bg-yellow-500 xl:inline-flex xl:max-w-xs xl:basis-1/4 flex flex-col">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
 
       <!-- Main Contents-->
-      <main class="bg-green-500">
+      <main class="bg-green-500 xl:flex-1">
         <!-- Hero section -->
-        <section id="home">
-          <h1>Home</h1>
-          <button>Learn More</button>
+        <section id="home" class="py-20 flex flex-col justify-center items-center h-full max-h-64 xl:max-h-80 bg-[url('https://picsum.photos/1000')]">
+          <h1 class="text-center text-xl py-2">Home</h1>
+          <button class="bg-orange-950 w-fit px-3 py-2 text-white">Learn More</button>
         </section>
 
         <!-- Section -->
-        <section>
-          <div id="why">
+        <section class="flex flex-col xl:flex-row">
+          <div id="why" class="basis-1/3">
             <h2>Why</h2>
             <div>
               <img src="https://picsum.photos/1500" />
@@ -76,7 +102,7 @@
               Suspendisse sed fermentum quam, ut efficitur nisl.
             </p>
           </div>
-          <div id="what">
+          <div id="what" class="basis-1/3">
             <h2>What</h2>
             <div>
               <img src="https://picsum.photos/1000" />
@@ -86,7 +112,7 @@
               Suspendisse sed fermentum quam, ut efficitur nisl.
             </p>
           </div>
-          <div id="how">
+          <div id="how" class="basis-1/3">
             <h2>How</h2>
             <div>
               <img src="https://picsum.photos/1800" />
